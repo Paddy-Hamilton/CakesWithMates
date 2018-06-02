@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EditCakeModalStyled/> renders 1`] = `
+<h2
+  className="MuiTypography-root-8 MuiTypography-title-14 MuiTypography-gutterBottom-25 title"
+>
+  Create cake
+</h2>
+`;

@@ -1,0 +1,35 @@
+type Query {
+  getCakes(skip: Int, first: Int): CakesPayload!
+  cake(id: ID!): Cake!
+  count: Int!
+}
+
+type Mutation {
+  addCake(
+    name: String!
+    comment: String!
+    imageUrl: String!
+    yumFactor: Int!
+  ): Cake!
+  editCake(
+    name: String!
+    comment: String!
+    imageUrl: String!
+    yumFactor: Int!
+    id: ID!
+  ): Cake!
+  deleteCake(id: ID!): String
+}
+
+type Cake {
+  id: ID!
+  name: String!
+  comment: String
+  imageUrl: String!
+  yumFactor: Int!
+}
+
+type CakesPayload {
+  cakes: [Cake]!
+  count: Int!
+}

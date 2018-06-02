@@ -1,0 +1,3 @@
+  mutation ToggleCreateCake($open: Boolean!) {
+     toggleAddCake(open: $open) @client 
+  }

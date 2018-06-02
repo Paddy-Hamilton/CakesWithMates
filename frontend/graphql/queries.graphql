@@ -1,0 +1,29 @@
+fragment cakeDetails on Cake {
+  id
+  name 
+  comment 
+  yumFactor 
+  imageUrl
+}
+
+
+query CAKES($skip: Int = 0, $first: Int = 20) {
+  getCakes(skip:$skip,first:$first){
+    cakes {
+      ...cakeDetails
+    }
+    count
+   
+  }
+}
+query CAKE($id:ID!) {
+  cake(id:$id){
+    ...cakeDetails
+  }
+}
+
+# local
+query EDIT_CAKE_MODAL_OPEN {
+  editCakeModalOpen @client
+}
+

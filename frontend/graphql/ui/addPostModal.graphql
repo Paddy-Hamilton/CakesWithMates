@@ -1,0 +1,3 @@
+query ADD_CAKE_MODAL_OPEN {
+  createCakeOpen @client
+}

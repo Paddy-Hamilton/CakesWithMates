@@ -1,0 +1,21 @@
+mutation DELETE_CAKE ($id:ID!){
+  deleteCake(id:$id)
+}
+
+mutation ADD_CAKE($name:String!,$comment:String!,$imageUrl:String!,$yumFactor:Int!) {
+  addCake (name:$name,comment:$comment,imageUrl:$imageUrl,,yumFactor:$yumFactor) {
+    id
+  }
+}
+
+mutation EDIT_CAKE($name:String!,$comment:String!,$imageUrl:String!,$yumFactor:Int!$id:ID!) {
+  editCake (name:$name,comment:$comment,imageUrl:$imageUrl,id:$id,yumFactor:$yumFactor) {
+    id
+  }
+}
+
+# local
+mutation TOGGLE_CAKE_MODAL_OPEN {
+  toggleEditCakeModal @client
+}
+
