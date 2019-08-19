@@ -3705,7 +3705,7 @@ graphql-import@^0.5.2:
   dependencies:
     lodash "^4.17.4"
 
-graphql-tag@^2.10.1, graphql-tag@^2.4.2, graphql-tag@^2.6.1, graphql-tag@^2.9.2:
+graphql-tag@^2.10.0, graphql-tag@^2.10.1, graphql-tag@^2.4.2, graphql-tag@^2.9.2:
   version "2.10.1"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.10.1.tgz#10aa41f1cd8fae5373eaf11f1f67260a3cad5e02"
   integrity sha512-jApXqWBzNXQ8jYa/HLkZJaVw9jgwNqZkywa2zfFn16Iv1Zb7ELNHkJaXHR7Quvd5SIGsy6Ny7SUKATgnu05uEg==
@@ -5715,12 +5715,12 @@ next-apollo@^3.0.3:
     prop-types-exact "1.2.0"
     url "0.11.0"
 
-next-plugin-graphql@0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/next-plugin-graphql/-/next-plugin-graphql-0.0.1.tgz#101bab9485717e7149f0e8f50e843ea636adedd6"
-  integrity sha512-saei0RmUlYP5mF/7i6IvDhacnpMaSv0NpalBLtfELja47AHxGpuEk3CCcyS/bAOWRF7xGKeFYXtAwFSlZa2NzQ==
+next-plugin-graphql@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/next-plugin-graphql/-/next-plugin-graphql-0.0.2.tgz#31625abe1cef282194063533522026010a9d6255"
+  integrity sha512-PgRqONNSF+lTyrtraNC7wJWNYq1U4v4jgIHmvTXYvdtYEz7oeuNNqk3N8mlunV2WzntpSFSe0BCdinRN25tkmQ==
   dependencies:
-    graphql-tag "^2.6.1"
+    graphql-tag "^2.10.0"
 
 next-server@9.0.3:
   version "9.0.3"

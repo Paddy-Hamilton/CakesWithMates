@@ -11,11 +11,6 @@ import withApolloClient from "../lib/with-apollo-client";
 //* here we use App from next/app and wrap it with withData so we can get Apollo and SSR
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx,router, ...rest }) {
-    let pageProps = {};
-    pageProps.query = router.query;
-    return { pageProps };
-  }
   constructor(props, context) {
     super(props, context);
   }
@@ -33,7 +28,6 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps, apolloClient } = this.props;
-
 
     return (
       <Container>
