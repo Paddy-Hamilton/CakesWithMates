@@ -16,8 +16,6 @@ app
     });
 
     server.get("*", (req, res) => {
-      // console.log(req);
-      // console.log(req.cookies);
       return handle(req, res);
     });
 

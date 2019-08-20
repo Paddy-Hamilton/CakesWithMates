@@ -77,7 +77,7 @@ const CakeCard = ({
 }) => {
   return (
     <Link as={`/a/${id}`} href={`/cake?id=${id}`}>
-      <Card className={classes.cake}>
+      <Card className={classes.cake} data-testid="cakes-card">
         <div className={classes.mediaContainer}>
           <CardMedia
             className={classes.media}

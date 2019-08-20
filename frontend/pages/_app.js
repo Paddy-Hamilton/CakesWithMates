@@ -6,9 +6,6 @@ import { theme } from "../lib/theme";
 import Head from "next/head";
 import { ApolloProvider } from "@apollo/react-hooks";
 import withApolloClient from "../lib/with-apollo-client";
-//* Next.js wraps each Page in an <App></App> component. This is handy for when you want to persist anything from page to page, or just access a component that is 1 level higher than each page.
-
-//* here we use App from next/app and wrap it with withData so we can get Apollo and SSR
 
 class MyApp extends App {
   constructor(props, context) {

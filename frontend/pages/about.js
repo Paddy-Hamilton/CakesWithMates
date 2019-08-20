@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Typography from "@material-ui/core/Typography";
 import PageLayout from "../components/PageLayout";
 import { withStyles } from "@material-ui/core/styles";
-import withData from "../lib/withData";
 const styles = theme => ({
   root: {
     textAlign: "center",

@@ -3,7 +3,6 @@ import PageLayout from "../components/PageLayout";
 import CakeGrid from "../components/CakeGrid";
 import CreateCakeBtn from "../components/CreateCakeBtn";
 import EditCakeModal from "../components/EditCakeModal";
-import withData from "../lib/withData";
 const Index = () => (
   <PageLayout>
     <CakeGrid />
@@ -13,4 +12,3 @@ const Index = () => (
 );
 
 export default Index;
-
