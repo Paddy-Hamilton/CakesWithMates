@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Query } from 'react-apollo';
-import { CAKES } from '../../graphql/queries.graphql';
-import InfiniteScroll from 'react-infinite-scroller';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Query } from "react-apollo";
+import { CAKES } from "../../graphql/queries.graphql";
+import InfiniteScroll from "react-infinite-scroller";
 
 class GetCakesGridContainer extends Component {
   constructor(props) {
@@ -30,7 +30,10 @@ class GetCakesGridContainer extends Component {
           }
           const newData = Object.assign({}, prev, {
             ...prev,
-            getCakes: { ...prev.getCakes, cakes: [...prev.getCakes.cakes, ...newUnique] }
+            getCakes: {
+              ...prev.getCakes,
+              cakes: [...prev.getCakes.cakes, ...newUnique]
+            }
           });
           return newData;
         }
@@ -46,19 +49,32 @@ class GetCakesGridContainer extends Component {
           first: 20,
           skip: 0
         }}
-        fetchPolicy="cache-and-network"
-        notifyOnNetworkStatusChange={true}
+        fetchPolicy="cache-first"
+        // notifyOnNetworkStatusChange={true}
       >
-        {({ loading, error, networkStatus, data, fetchMore }) => {
+        {({
+          loading,
+          error,
+          networkStatus,
+          data,
+          fetchMore,
+          
+          ...rest
+        }) => {
           if (error) return `Error! ${error.message}`;
-          if (!data.getCakes) return null;
+          if (!data.getCakes) return <div>no cakes found</div>;
+
           const {
             getCakes: { cakes, count }
           } = data;
           return (
             <InfiniteScroll
               pageStart={0}
-              loadMore={() => (networkStatus === 7 ? this.loadMoreCakes(fetchMore, cakes.length) : null)}
+              loadMore={() =>
+                networkStatus === 7
+                  ? this.loadMoreCakes(fetchMore, cakes.length)
+                  : null
+              }
               hasMore={count > cakes.length}
               loader={
                 <div className="loader" key={0}>

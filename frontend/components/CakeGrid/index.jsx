@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Grid from '@material-ui/core/Grid';
-import { withStyles } from '@material-ui/core/styles';
-import Link from 'next/link';
-import CakeCard from '../CakeCard';
-import CakeGridContainer from './container';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import Grid from "@material-ui/core/Grid";
+import { withStyles } from "@material-ui/core/styles";
+import Link from "next/link";
+import CakeCard from "../CakeCard";
+import CakeGridContainer from "./container";
 const styles = theme => ({
   root: {
-    padding: '0 12px',
-    margin: '0 auto'
+    padding: "0 12px",
+    margin: "0 auto"
   },
   grid: {
     marginTop: 0
@@ -17,8 +17,8 @@ const styles = theme => ({
 
 const CakeGrid = ({ cakes, classes }) => {
   return (
-    <div className={classes.root} id="testr">
-      <Grid container spacing={24} className={classes.grid} alignItems="stretch">
+    <div className={classes.root} id="testr" >
+      <Grid container spacing={3} className={classes.grid} alignItems="stretch">
         {cakes &&
           cakes.map((cake, i) => (
             <Grid item xs={12} md={6} lg={4} key={cake.id}>
@@ -40,4 +40,6 @@ CakeGrid.propTypes = {
 };
 export const CakeGridStyled = withStyles(styles)(CakeGrid);
 
-export default () => <CakeGridContainer render={cakes => <CakeGridStyled cakes={cakes} />} />;
+export default () => (
+  <CakeGridContainer render={cakes => <CakeGridStyled cakes={cakes} />} />
+);

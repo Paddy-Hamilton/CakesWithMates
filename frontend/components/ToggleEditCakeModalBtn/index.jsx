@@ -1,46 +1,40 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
-import EditIcon from '@material-ui/icons/Edit';
-import Zoom from '@material-ui/core/Zoom';
-import { TOGGLE_CAKE_MODAL_OPEN } from '../../graphql/mutations.graphql';
-import { Mutation } from 'react-apollo';
-class ToggleEditCakeModalBtn extends Component {
-  render() {
-    const { theme, id } = this.props;
-    const transitionDuration = {
-      enter: theme.transitions.duration.enteringScreen,
-      exit: theme.transitions.duration.leavingScreen
-    };
-    return (
-      <Zoom
-        in
-        timeout={transitionDuration}
-        style={{
-          transitionDelay: transitionDuration.exit
+import React from "react";
+import PropTypes from "prop-types";
+import { Fab, Zoom } from "@material-ui/core";
+import EditIcon from "@material-ui/icons/Edit";
+import { TOGGLE_CAKE_MODAL_OPEN } from "../../graphql/mutations.graphql";
+import { useMutation } from "@apollo/react-hooks";
+import { useTheme } from "@material-ui/styles";
+const ToggleEditCakeModalBtn = ({ id, theme }) => {
+  const [toggleEditCakeModal, { data }] = useMutation(TOGGLE_CAKE_MODAL_OPEN);
+  const {
+    transitions: {
+      duration: { enteringScreen: enter, leavingScreen: exit }
+    }
+  } = theme;
+  return (
+    <Zoom
+      in
+      timeout={{ enter, exit }}
+      style={{
+        transitionDelay: exit
+      }}
+      unmountOnExit
+    >
+      <Fab
+        aria-label="Edit Cake"
+        color="secondary"
+        size="small"
+        onClick={e => {
+          e.preventDefault();
+          toggleEditCakeModal();
         }}
-        unmountOnExit
       >
-        <Mutation mutation={TOGGLE_CAKE_MODAL_OPEN}>
-          {toggleEditCakeModal => (
-            <Button
-              aria-label="Edit Cake"
-              color="secondary"
-              variant="fab"
-              mini
-              onClick={e => {
-                e.preventDefault();
-                toggleEditCakeModal();
-              }}
-            >
-              <EditIcon />
-            </Button>
-          )}
-        </Mutation>
-      </Zoom>
-    );
-  }
-}
+        <EditIcon />
+      </Fab>
+    </Zoom>
+  );
+};
 
 ToggleEditCakeModalBtn.propTypes = {
   theme: PropTypes.object.isRequired

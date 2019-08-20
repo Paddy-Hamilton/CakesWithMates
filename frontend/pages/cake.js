@@ -1,6 +1,10 @@
-import SingleCake from '../components/SingleCake';
-import PageLayout from '../components/PageLayout';
-const CakePage = ({ query: { id } }) => {
+import SingleCake from "../components/SingleCake";
+import PageLayout from "../components/PageLayout";
+import { useRouter } from "next/router";
+const CakePage = () => {
+  const {
+    query: { id }
+  } = useRouter();
   return (
     <PageLayout>
       <SingleCake id={id} />
