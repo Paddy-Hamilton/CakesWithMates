@@ -92,10 +92,11 @@ const EditCakeModal = ({
               label="Image Url"
               margin="normal"
               fullWidth
+              required
               value={imageUrl}
               onChange={e => handleOnChange("imageUrl", e)}
             />
-            <FormControl fullWidth margin="normal">
+            <FormControl fullWidth margin="normal" required>
               <InputLabel htmlFor="yumFactor">Yum Factor</InputLabel>
               <Select
                 value={yumFactor}
