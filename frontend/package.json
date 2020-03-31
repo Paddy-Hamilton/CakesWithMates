@@ -30,7 +30,7 @@
     "isomorphic-unfetch": "^2.0.0",
     "jss": "latest",
     "moment": "^2.22.1",
-    "next": "9.0.3",
+    "next": "9.3.2",
     "next-apollo": "^3.0.3",
     "next-plugin-graphql": "^0.0.2",
     "next-with-apollo": "^4.2.0",
