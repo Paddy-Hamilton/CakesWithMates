@@ -18,7 +18,7 @@
     "graphql-yoga": "^1.14.2",
     "jsonwebtoken": "^8.2.1",
     "prisma-binding": "1.5.19",
-    "sanitize-html": "^1.18.2"
+    "sanitize-html": "^2.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.49",
